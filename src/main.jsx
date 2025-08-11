@@ -6,6 +6,8 @@ import { RouterProvider } from "react-router";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <div className="bg-gray-800 min-h-screen text-white">
+       <RouterProvider router={router} />
+   </div>
   </StrictMode>
 );

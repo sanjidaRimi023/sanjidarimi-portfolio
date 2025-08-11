@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
+import HeroSection from '../../Components/Customs/HeroSection'
 
-const Home = () => {
-    return (
-        <div>
-            home
-        </div>
-    );
-};
-
-export default Home;
+export default function Home() {
+  return (
+      <div>
+          <HeroSection/>
+    </div>
+  )
+}
