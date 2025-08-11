@@ -4,19 +4,20 @@ import { motion } from "framer-motion";
 import picture from "../../assets/IMG_20250811_220512.jpg";
 import { Link } from "react-router";
 import { ChevronsRight } from "lucide-react";
+
 const About = () => {
   return (
     <>
-      <section className="container mx-auto mb-20 px-20">
-        <div className="flex items-end">
+      <section className="container mx-auto mb-20 px-4 lg:px-20">
+        <div className="flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-4 mb-10">
           <motion.h1
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false }}
-            className="text-4xl"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-4xl font-bold text-center md:text-left w-full md:w-auto"
           >
-            About <span className="text-rose-600">Me</span>{" "}
+            About <span className="text-rose-600">Me</span>
           </motion.h1>
 
           <motion.span
@@ -26,25 +27,24 @@ const About = () => {
             viewport={{ once: false }}
             className="flex flex-col gap-1 "
           >
-            <hr className="border-1 w-50" />
-            <hr className="border-1 w-50 ml-4 text-rose-600" />
+            <hr className="border-1 md:w-50 text-gray-500" />
+            <hr className="border-1 md:w-50 ml-4 text-rose-600" />
           </motion.span>
         </div>
 
-        <div className="flex gap-10 items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20">
           <motion.div
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="w-full max-w-xs md:max-w-sm mx-auto md:mx-0"
           >
             <img
               src={picture}
               alt="Sanjida Akter Rimi"
-              className="w-full max-w-xs md:max-w-sm border-l-8 border-b-8 border-primary rounded-t-[40px] rounded-br-[40px] shadow-2xl border-rose-600 hover:border-white transition-shadow duration-800 ease-in-out my-20"
-              style={{
-                boxShadow: "none",
-              }}
+              className="w-full border-l-8 border-b-8 border-rose-600 rounded-t-[40px] rounded-br-[40px] shadow-2xl hover:border-white transition-shadow duration-800 ease-in-out"
+              style={{ boxShadow: "none" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.boxShadow =
                   "0 0 20px 8px rgba(244,63,94,0.7)")
@@ -52,15 +52,16 @@ const About = () => {
               onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
             />
           </motion.div>
+
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.2 }}
-            className="max-w-xl"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="max-w-xl text-center md:text-left"
           >
             <p className="mb-4">
-              I,m Sanjida Akter Rimi, a passionate frontend-focused MERN Stack
+              I’m Sanjida Akter Rimi, a passionate frontend-focused MERN Stack
               Developer dedicated to building fast, clean, and scalable web
               applications using React.js, Next.js, Node.js, Express.js,
               MongoDB, and Firebase.
@@ -78,9 +79,7 @@ const About = () => {
 
             <Link
               to="/more-about-me"
-              className="flex gap-3 px-6 py-2 text-white rounded-full w-fit 
-             bg-transparent shadow-[0_0_30px_rgba(244,63,94,0.5)] 
-             hover:bg-rose-600 hover:shadow-none transition-all duration-300"
+              className="inline-flex gap-3 px-6 py-2 text-white rounded-full w-fit bg-transparent shadow-[0_0_30px_rgba(244,63,94,0.5)] hover:bg-rose-600 hover:shadow-none transition-all duration-300"
             >
               Read More <ChevronsRight />
             </Link>
