@@ -1,33 +1,42 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router";
-import useAxiosQuery from "../../Hooks/useAxiosQuery"; 
+import { Link, useNavigate } from "react-router"; 
+import useAxiosQuery from "../../Hooks/useAxiosQuery";
+import { ExternalLink, FileCode2 } from "lucide-react";
 
 const Projects = () => {
   const navigate = useNavigate();
 
+  const {
+    data: projectsResponse = {},
+    isLoading,
+    isError,
+    error,
+  } = useAxiosQuery("projects", "/project");
 
+  const projects = projectsResponse?.data || [];
 
-  const { data: projects = [], isLoading, isError, error } = useAxiosQuery("projects", "/project");
-console.log(projects.data);
-
-  if (isLoading) return <p className="text-center mt-10">Loading projects...</p>;
-  if (isError) return <p className="text-center mt-10 text-red-500">Error: {error.message}</p>;
-
-
+  if (isLoading)
+    return <p className="text-center mt-10 text-xl">Loading projects...</p>;
+  if (isError)
+    return (
+      <p className="text-center mt-10 text-red-500">Error: {error.message}</p>
+    );
 
   return (
-    <section className="container mx-auto mb-20 lg:px-20">
+    <section className="container mx-auto py-20 px-4 lg:px-20">
+  
+
       <div className="flex flex-col md:flex-row items-end mb-10">
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false }}
-          className="text-4xl font-bold text-rose-600"
+          className="text-4xl font-bold"
         >
-          Projects
+          Recent <span className="text-rose-600">Projects</span>
         </motion.h1>
 
         <motion.span
@@ -41,44 +50,50 @@ console.log(projects.data);
           <hr className="border-1 w-10 text-rose-600" />
         </motion.span>
       </div>
-
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {projects?.data.map((project) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projects.map((project, index) => (
           <motion.div
             key={project._id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="bg-gray-900 rounded-lg shadow-lg overflow-hidden flex flex-col"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="group relative block overflow-hidden rounded-xl bg-gray-800/80 border border-gray-700 shadow-lg transition-all duration-300 hover:shadow-rose-500/30 hover:border-rose-500/50"
           >
-         
-            <img
-              src={project.projectImage}
-              alt={project.projectName}
-              className="w-full h-48 object-cover"
-            />
+            <div className="overflow-hidden">
+              <img
+                src={project.projectImage}
+                alt={project.projectName}
+                className="aspect-video w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+              />
+            </div>
 
-         
-            <div className="p-5 flex flex-col flex-grow">
-              <h3 className="text-2xl font-semibold text-white mb-3">{project.projectName}</h3>
-              <p className="text-gray-300 flex-grow line-clamp-3">{project.slogan || project.description}</p>
+            <div className="p-6 space-y-3">
+              <h2 className="text-xl font-bold text-white">
+                <span className="text-sm text-rose-500 font-normal">
+                  Project Name{" "}
+                </span>
+                <br />
+                {project.projectName}
+              </h2>
+              <p className="text-sm text-gray-300">{project.slogan}</p>
 
-           
-              <div className="mt-5 flex gap-4">
-                <a
-                  href={project.liveLink}
+        
+              <div className="flex justify-between">
+                <Link
+                  to={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-grow bg-rose-600 text-white py-2 rounded-md text-center hover:bg-rose-700 transition"
+                  className="flex items-center gap-2 rounded-full border-2 border-rose-600 px-2 py-1 text-center text-sm text-rose-600 shadow-sm transition-all duration-300 hover:bg-rose-700 hover:text-white hover:scale-105"
                 >
+                  <ExternalLink size={15} />
                   Live Link
-                </a>
+                </Link>
                 <button
                   onClick={() => navigate(`/projects/${project._id}`)}
-                  className="flex-grow bg-gray-700 text-white py-2 rounded-md hover:bg-gray-600 transition"
+                  className="flex items-center gap-2 rounded-full border-2 border-rose-600 px-3 py-2 text-center text-sm text-rose-600 shadow-sm transition-all duration-300 hover:bg-rose-700 hover:text-white hover:scale-105"
                 >
+                  <FileCode2 size={15} />
                   Details
                 </button>
               </div>
