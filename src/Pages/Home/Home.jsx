@@ -9,8 +9,8 @@ export default function Home() {
       <>
       <HeroSection />
       <About />
-      <MySkills />
-      <Projects/>
+     <MySkills/>
+    <Projects/>
     </>
   )
 }

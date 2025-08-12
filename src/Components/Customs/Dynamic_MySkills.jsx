@@ -1,22 +1,24 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react"; 
+import useAxiosQuery from "../../Hooks/useAxiosQuery"; 
 
-const MySkills = () => {
-  const skills = [
-    {id:1, name: "React", icon: "material-icon-theme:react" },
-    {id:2, name: "JavaScript", icon: "skill-icons:javascript" },
-    { id:3,name: "HTML", icon: "skill-icons:html" },
-    { id:4,name: "CSS", icon: "skill-icons:css" },
-    { id:5,name: "MongoDB", icon: "skill-icons:mongodb" },
-    { id:6,name: "Node Js", icon: "material-icon-theme:nodejs" },
-    { id:7,name: "Firebase", icon: "logos:firebase-icon" },
-    {id:8, name: "ExpressJS", icon: "skill-icons:expressjs-light" },
-  ];
+const Dynamic_MySkills = () => {
+
+  const { data: skills = [], isLoading, isError, error } = useAxiosQuery("skills", "/skill");
+console.log(skills.data);
+  if (isLoading) {
+    return <p className="text-center text-gray-500">Loading skills...</p>;
+  }
+
+  if (isError) {
+    return <p className="text-center text-red-500">Error: {error.message}</p>;
+  }
 
   return (
     <section className="container mx-auto mb-20 lg:px-20">
+    
       <div className="flex flex-col md:flex-row items-end mb-10">
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
@@ -40,10 +42,10 @@ const MySkills = () => {
         </motion.span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-2">
-        {skills?.map((skill) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {skills?.data.map((skill) => (
           <motion.div
-            key={skill.id}
+            key={skill._id}
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
@@ -61,4 +63,4 @@ const MySkills = () => {
   );
 };
 
-export default MySkills;
+export default Dynamic_MySkills;

@@ -3,6 +3,10 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
 import About from "../Components/Customs/About";
 
+import Projects from "../Components/Customs/Projects";
+import ProjectDetail from "../Components/Customs/ProjectDetail";
+import MySkills from "../Components/Customs/MySkills";
+
 const router = createBrowserRouter([
  
     {
@@ -17,6 +21,18 @@ const router = createBrowserRouter([
             {
                 path: "about",
                 element: <About/>
+            },
+            {
+                path: "Skill",
+                element: <MySkills/>
+            },
+            {
+                path: "projects",
+                element: <Projects/>
+            },
+            {
+                path: "projects/:id",
+                element: <ProjectDetail/>
             }
 
         ]
