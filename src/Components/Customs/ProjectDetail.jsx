@@ -130,7 +130,7 @@ useEffect(() => {
                     href={project.clientLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600 dark:text-gray-300 border-2 border-gray-500 rounded-full hover:bg-gray-500 hover:text-white transition-colors duration-300"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-rose-500 border-2 border-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-colors duration-300"
                   >
                     <ExternalLink size={16} /> Client
                   </a>
@@ -139,7 +139,7 @@ useEffect(() => {
                       href={project.serverLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600 dark:text-gray-300 border-2 border-gray-500 rounded-full hover:bg-gray-500 hover:text-white transition-colors duration-300"
+                      className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-rose-500 border-2 border-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-colors duration-300"
                     >
                       <ExternalLink size={16} /> Server
                     </a>

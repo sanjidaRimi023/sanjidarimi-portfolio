@@ -8,29 +8,30 @@ import { ChevronsRight } from "lucide-react";
 const About = () => {
   return (
     <>
-      <section className="container mx-auto mb-20 px-4 lg:px-20">
-        <div className="flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-4 mb-10">
-          <motion.h1
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl font-bold text-center md:text-left w-full md:w-auto"
-          >
-            About <span className="text-rose-600">Me</span>
-          </motion.h1>
-
-          <motion.span
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false }}
-            className="flex flex-col gap-1 "
-          >
-            <hr className="border-1 md:w-50 text-gray-500" />
-            <hr className="border-1 md:w-50 ml-4 text-rose-600" />
-          </motion.span>
-        </div>
+      <section className="container mx-auto mb-20 mt-4 px-4 lg:px-20">
+        <div className="flex flex-col md:flex-row  item-start md:items-end mb-10">
+               <motion.h1
+                 initial={{ x: -50, opacity: 0 }}
+                 whileInView={{ x: 0, opacity: 1 }}
+                 transition={{ duration: 0.8 }}
+                 viewport={{ once: false }}
+                 className="text-4xl font-bold"
+               >About {" "}
+                         <span className="text-rose-600">Me</span>
+                       
+               </motion.h1>
+       
+               <motion.span
+                 initial={{ x: 50, opacity: 0 }}
+                 whileInView={{ x: 0, opacity: 1 }}
+                 transition={{ duration: 0.8 }}
+                 viewport={{ once: false }}
+                 className="flex flex-col gap-1 ml-5"
+               >
+                 <hr className="border-1 w-16" />
+                 <hr className="border-1 w-10 text-rose-600" />
+               </motion.span>
+             </div>
 
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20">
           <motion.div
@@ -61,7 +62,7 @@ const About = () => {
             className="max-w-xl text-center md:text-left"
           >
             <p className="mb-4">
-              I’m Sanjida Akter Rimi, a passionate frontend-focused MERN Stack
+              I'm Sanjida Akter Rimi, a passionate frontend-focused MERN Stack
               Developer dedicated to building fast, clean, and scalable web
               applications using React.js, Next.js, Node.js, Express.js,
               MongoDB, and Firebase.
