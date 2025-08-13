@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Helper component for icons
+
 const Icon = ({ path, className = "w-6 h-6" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
          viewBox="0 0 24 24" strokeWidth={1.5} 
@@ -9,25 +9,24 @@ const Icon = ({ path, className = "w-6 h-6" }) => (
     </svg>
 );
 
-// Contact information component
 export const ContactInfo = () => {
     return (
         <div className="bg-gray-900 rounded-3xl p-6 sm:p-8 md:p-10 mb-4 flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-rose-600">
                 Let’s Connect
             </h2>
-            <p className="text-zinc-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
                 Have a project in mind or just want to say hello? I’m always open to new ideas and collaborations.
             </p>
             <div className="space-y-4">
                 <a href="mailto:tumithasan1@gmail.com" 
-                   className="flex items-center gap-3 text-zinc-300 hover:text-rose-400 transition-colors group">
+                   className="flex items-center gap-3 text-gray-300 hover:text-rose-400 transition-colors group">
                     <Icon path="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" 
                           className="w-6 h-6 text-rose-500 group-hover:text-rose-400 transition-colors" />
                     <span>sanjidarimi023@gmail.com</span>
                 </a>
                 <a href="https://wa.me/8801611960330" target="_blank" rel="noopener noreferrer" 
-                   className="flex items-center gap-3 text-zinc-300 hover:text-rose-400 transition-colors group">
+                   className="flex items-center gap-3 text-gray-300 hover:text-rose-400 transition-colors group">
                     <Icon path="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.006 3 11.55c0 2.43.99 4.625 2.603 6.22l-1.1 4.074 4.15-1.088a8.96 8.96 0 004.347.994z" 
                           className="w-6 h-6 text-rose-500 group-hover:text-rose-400 transition-colors" />
                     <span>+880 194 208 4201</span>
@@ -37,7 +36,7 @@ export const ContactInfo = () => {
     );
 };
 
-// Contact form component
+
 const ContactForm = () => {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -78,7 +77,7 @@ const ContactForm = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-rose-600">
                 Send a Message
             </h2>
-            <p className="text-center text-zinc-400 mb-8">
+            <p className="text-center text-gray-400 mb-8">
                 I'll get back to you as soon as possible.
             </p>
 
@@ -92,9 +91,9 @@ const ContactForm = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="peer w-full p-4 rounded-lg bg-zinc-800 border border-zinc-700 placeholder-transparent text-white outline-none focus:ring-2 focus:ring-rose-500 transition-all"
+                        className="peer w-full p-4 rounded-lg bg-gray-800 border border-gray-700 placeholder-transparent outline-none focus:ring-2 focus:ring-rose-500 transition-all"
                     />
-                    <label htmlFor="name" className="absolute left-4 -top-3.5 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-rose-400 peer-focus:text-sm">
+                    <label htmlFor="name" className="absolute left-4 -top-3.5 text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-5.5 peer-focus:text-rose-400 peer-focus:text-sm">
                         Your Name
                     </label>
                 </div>
@@ -108,9 +107,9 @@ const ContactForm = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="peer w-full p-4 rounded-lg bg-zinc-800 border border-zinc-700 placeholder-transparent text-white outline-none focus:ring-2 focus:ring-rose-500 transition-all"
+                        className="peer w-full p-4 rounded-lg bg-gray-800 border border-gray-700 placeholder-transparent outline-none focus:ring-2 focus:ring-rose-500 transition-all"
                     />
-                    <label htmlFor="email" className="absolute left-4 -top-3.5 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-rose-400 peer-focus:text-sm">
+                    <label htmlFor="email" className="absolute left-4 -top-3.5 text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-5.5 peer-focus:text-rose-400 peer-focus:text-sm">
                         Your Email
                     </label>
                 </div>
@@ -124,9 +123,9 @@ const ContactForm = () => {
                         onChange={handleChange}
                         required
                         rows="5"
-                        className="peer w-full p-4 rounded-lg bg-zinc-800 border border-zinc-700 placeholder-transparent text-white outline-none focus:ring-2 focus:ring-rose-500 resize-none transition-all"
+                        className="peer w-full p-4 rounded-lg bg-gray-800 border border-gray-700 placeholder-transparent outline-none focus:ring-2 focus:ring-rose-500 resize-none transition-all"
                     />
-                    <label htmlFor="message" className="absolute left-4 -top-3.5 text-zinc-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-400 peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-rose-400 peer-focus:text-sm">
+                    <label htmlFor="message" className="absolute left-4 -top-3.5 text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-5.5 peer-focus:text-rose-400 peer-focus:text-sm">
                         Your Message
                     </label>
                 </div>

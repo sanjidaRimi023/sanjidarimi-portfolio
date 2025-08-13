@@ -7,6 +7,7 @@ import Projects from "../Components/Customs/Projects";
 import ProjectDetail from "../Components/Customs/ProjectDetail";
 import MySkills from "../Components/Customs/MySkills";
 import ContactForm from "../Components/Customs/Contact";
+import Services from "../Components/Customs/Services";
 
 const router = createBrowserRouter([
  
@@ -31,9 +32,10 @@ const router = createBrowserRouter([
                 path: "projects",
                 element: <Projects/>
             },
+              
             {
-                path: "contact",
-                element: <ContactForm/>
+                path: "services",
+                element: <Services/>
             },
             {
                 path: "projects/:id",

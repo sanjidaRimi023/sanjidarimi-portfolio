@@ -47,7 +47,7 @@ export default function HeroSection() {
             <Cursor cursorStyle="_" />
           </h2>
 
-          <p className="mt-3 max-w-xl text-sm sm:text-base italic text-gray-700 dark:text-gray-300">
+          <p className="mt-3 max-w-xl text-sm sm:text-base italic text-gray-300 dark:text-gray-300">
             “Designing and developing seamless user experiences with MongoDB,
             Express, React, and Node.js. Dedicated to creating responsive,
             user-friendly, and visually engaging web applications using clean,

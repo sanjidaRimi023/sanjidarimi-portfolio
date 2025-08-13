@@ -13,9 +13,11 @@ const Navbar = () => {
   ];
 
   const menuRight = [
+    { name: "Services", path: "/services" },
+  { name: "Project", path: "/projects" },
     { name: "Resume", path: "/resume" },
-    { name: "Project", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+    
+   
   ];
 
   return (

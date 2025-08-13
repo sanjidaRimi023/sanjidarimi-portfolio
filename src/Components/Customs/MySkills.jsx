@@ -17,7 +17,7 @@ const MySkills = () => {
 
   return (
     <section className="container mx-auto mb-20 lg:px-20">
-      <div className="flex flex-col md:flex-row items-end mb-10">
+      <div className="flex flex-col md:flex-row items-start lg:items-end mb-10 mt-7">
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

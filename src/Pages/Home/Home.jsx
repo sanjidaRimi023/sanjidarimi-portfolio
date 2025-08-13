@@ -15,7 +15,11 @@ export default function Home() {
       <HeroSection />
       <About />
       <MySkills />
+          {/* <Dynamic_MySkills /> */}
       <Tool />
+    
+
+      {/* <Daynamic_Projects /> */}
       <Projects />
       <div className="flex gap-8 flex-col lg:flex-row container mx-auto">
         <ContactInfo/>
@@ -23,9 +27,7 @@ export default function Home() {
       </div>
       
 
-      {/* <Dynamic_MySkills /> */}
-
-      {/* <Daynamic_Projects /> */}
+    
     </>
   );
 }

@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <div className="bg-gray-800 min-h-screen text-white">
+      <div className="bg-gray-950 min-h-screen text-white">
         <RouterProvider router={router} />
       </div>
     </QueryClientProvider>

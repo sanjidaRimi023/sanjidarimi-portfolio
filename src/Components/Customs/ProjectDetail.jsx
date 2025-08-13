@@ -52,7 +52,7 @@ useEffect(() => {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl sm:text-3xl font-semibold tracking-wide text-gray-800 dark:text-white lg:text-4xl"
+                className="text-2xl sm:text-3xl font-semibold tracking-wide lg:text-4xl"
               >
                 {project.projectName}
               </motion.h1>
@@ -61,7 +61,7 @@ useEffect(() => {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="mt-2 italic text-gray-600 dark:text-gray-400 text-sm sm:text-base"
+                className="mt-2 italic text-sm sm:text-base"
               >
                 {project.slogan}
               </motion.p>
@@ -76,7 +76,7 @@ useEffect(() => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                    className="flex items-start sm:items-center text-gray-700 dark:text-gray-200 text-sm sm:text-base"
+                    className="flex items-start sm:items-center text-sm sm:text-base"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ useEffect(() => {
                   {project.technologies?.map((tech) => (
                     <div
                       key={tech}
-                      className="px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                      className="px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-gradient-to-r from-rose-600 via-red-500 to-rose-400"
                     >
                       {tech.trim()}
                     </div>
