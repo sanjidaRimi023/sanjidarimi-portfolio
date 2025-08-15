@@ -5,6 +5,7 @@ import picture from "../../assets/IMG_20250811_220512.jpg";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { Download } from "lucide-react";
 import SocialIcon from "../Shared/SocialIcon";
+import { Link } from "react-router";
 
 export default function HeroSection() {
   const [text] = useTypewriter({
@@ -59,9 +60,9 @@ export default function HeroSection() {
             <SocialIcon />
           </div>
 
-          <button className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-rose-700 border border-gray-700 rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-gray-800 transition-all duration-300">
+          <Link to="https://drive.google.com/file/d/1M1RfucTlKgUAMXu7klbjF237QGNIJ3C2/view?usp=sharing" className="inline-flex items-center gap-2 px-5 py-2 mt-8 bg-rose-700 border border-gray-700 rounded-full text-sm sm:text-base text-white backdrop-blur-sm hover:bg-gray-800 transition-all duration-300">
             Download Resume <Download size={20} />
-          </button>
+          </Link>
         </motion.div>
 
         <motion.div

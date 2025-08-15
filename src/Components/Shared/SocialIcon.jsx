@@ -61,7 +61,7 @@ const SocialIcon = () => {
           </svg>
         </Link>
 
-        <Link to="https://www.facebook.com/sanjida.rimi.123653">
+        <Link to="https://web.whatsapp.com/8801942084201">
           <svg
             fill="#ffffff"
             width="40px"

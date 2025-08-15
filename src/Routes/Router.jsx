@@ -1,13 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
-import About from "../Components/Customs/About";
-
-import Projects from "../Components/Customs/Projects";
 import ProjectDetail from "../Components/Customs/ProjectDetail";
 import MySkills from "../Components/Customs/MySkills";
-import ContactForm from "../Components/Customs/Contact";
 import Services from "../Components/Customs/Services";
+import Projects from "../Components/Customs/Projects";
+import MoreAboutMe from "../Components/Customs/MoreAboutMe";
 
 const router = createBrowserRouter([
  
@@ -21,8 +19,8 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "about",
-                element: <About/>
+                path: "more-about-me",
+                element: <MoreAboutMe/>
             },
             {
                 path: "skill",
@@ -32,15 +30,18 @@ const router = createBrowserRouter([
                 path: "projects",
                 element: <Projects/>
             },
-              
+            
+            
+            {
+                path: "projects/:id",
+                element: <ProjectDetail/>
+            },
             {
                 path: "services",
                 element: <Services/>
             },
-            {
-                path: "projects/:id",
-                element: <ProjectDetail/>
-            }
+            
+
 
         ]
     }

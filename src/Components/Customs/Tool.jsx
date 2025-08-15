@@ -17,7 +17,7 @@ const Tool = () => {
   ];
 
   return (
-    <section className="container mx-auto mb-20 lg:px-20">
+    <section className="container mx-auto mb-20 lg:px-20 overflow-hidden">
       <div className="flex flex-col md:flex-row  item-start md:items-end mb-10">
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
@@ -41,7 +41,7 @@ const Tool = () => {
           <hr className="border-1 w-10 text-rose-600" />
         </motion.span>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 px-4 mb-6">
         {tools.map((tool) => (
           <motion.div
             key={tool.name}
@@ -49,9 +49,9 @@ const Tool = () => {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: false }}
-            className="bg-gray-900/40 border border-gray-700 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(244,63,94,0.6)] transition-shadow duration-300"
+            className="bg-gray-900/40 border border-rose-700 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(244,63,94,0.6)] transition-shadow duration-300"
           >
-            <div className="text-6xl text-rose-500 mb-3">
+            <div className="text-6xl text-rose-500 mb-3 inline-block hover:animate-spin">
               <Icon icon={tool.icon} />
             </div>
             <p className="text-lg font-semibold text-white">{tool.name}</p>

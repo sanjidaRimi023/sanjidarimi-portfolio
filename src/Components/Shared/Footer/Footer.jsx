@@ -1,24 +1,19 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import SocialIcon from '../SocialIcon';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Replace with your actual links and name
-  const socialLinks = [
-    { icon: <Github size={24} />, url: 'https://github.com/your-username' },
-    { icon: <Linkedin size={24} />, url: 'https://linkedin.com/in/your-profile' },
-    { icon: <Twitter size={24} />, url: 'https://twitter.com/your-handle' },
-    { icon: <Mail size={24} />, url: 'mailto:your-email@example.com' },
-  ];
+
 
   const navLinks = [
-    { name: 'About', url: '/about' },
+    { name: 'About', url: '/more-about-me' },
     { name: 'Projects', url: '/projects' },
-    { name: 'Contact', url: '/contact' },
+    { name: 'resume', url: 'https://drive.google.com/file/d/1M1RfucTlKgUAMXu7klbjF237QGNIJ3C2/view?usp=sharing' },
   ];
 
-  const yourName = "Sanjida Akter Rimi"; // Replace with your name
+  const yourName = "Sanjida Akter Rimi";
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800 text-gray-400">
@@ -31,7 +26,7 @@ const Footer = () => {
           </h2>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
@@ -44,18 +39,8 @@ const Footer = () => {
           </nav>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center space-x-6 mb-8">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-rose-500 hover:scale-110 transform transition-all duration-300"
-              >
-                {link.icon}
-              </a>
-            ))}
+          <div className="mb-4">
+         <SocialIcon/>
           </div>
 
           {/* Copyright Information */}

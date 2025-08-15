@@ -8,13 +8,13 @@ import { ChevronsRight } from "lucide-react";
 const About = () => {
   return (
     <>
-      <section className="container mx-auto mb-20 mt-4 px-4 lg:px-20">
-        <div className="flex flex-col md:flex-row  item-start md:items-end mb-10">
+      <section className="container mx-auto mb-20 mt-4 px-4 lg:px-20 overflow-hidden">
+        <div className="flex flex-col md:flex-row  md:items-end mb-10">
                <motion.h1
                  initial={{ x: -50, opacity: 0 }}
                  whileInView={{ x: 0, opacity: 1 }}
                  transition={{ duration: 0.8 }}
-                 viewport={{ once: false }}
+            viewport={{ once: false }}
                  className="text-4xl font-bold"
                >About {" "}
                          <span className="text-rose-600">Me</span>
@@ -82,7 +82,7 @@ const About = () => {
               to="/more-about-me"
               className="inline-flex gap-3 px-6 py-2 text-white rounded-full w-fit bg-transparent shadow-[0_0_30px_rgba(244,63,94,0.5)] hover:bg-rose-600 hover:shadow-none transition-all duration-300"
             >
-              Read More <ChevronsRight />
+              Know more <ChevronsRight />
             </Link>
           </motion.div>
         </div>

@@ -1,4 +1,3 @@
-// src/components/Services.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Globe, Smartphone, Code, PenTool, Server, Cloud } from "lucide-react";
@@ -86,30 +85,47 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold mb-4"
-        >
-          My <span className="text-rose-500">Services</span>
-        </motion.h2>
+    <section className="py-16 overflow-hidden" aria-labelledby="services-title">
+      <div className="container mx-auto px-4 lg:px-20">
+        {/* Section Title */}
+        <header className="flex flex-col md:flex-row md:items-end mb-10">
+          <motion.h1
+            id="services-title"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl font-bold"
+          >
+            My <span className="text-rose-600">Services</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-1 ml-5"
+            aria-hidden="true"
+          >
+            <hr className="border-1 w-16" />
+            <hr className="border-1 w-10 text-rose-600" />
+          </motion.div>
+        </header>
+
+        {/* Intro Paragraph */}
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-12 text-gray-300"
         >
           Comprehensive web development services to bring your ideas to life.
         </motion.p>
 
+        {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -118,21 +134,33 @@ const Services = () => {
               whileHover={{ y: -5 }}
               className={`p-6 rounded-2xl shadow-lg bg-gradient-to-br ${service.color} border border-rose-200`}
             >
+              {/* Icon */}
               <div className="mb-4 inline-block hover:animate-spin">
                 {service.icon}
               </div>
 
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="mb-4">{service.description}</p>
+              {/* Title */}
+              <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
+
+              {/* Description */}
+              <p className="mb-4 text-gray-200">{service.description}</p>
+
+              {/* Points */}
               <ul className="space-y-1 text-sm">
                 {service.points.map((point, i) => (
-                  <li key={i} className="flex text-gray-300 items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-rose-500 rounded-full"></span>
+                  <li
+                    key={i}
+                    className="flex text-gray-300 items-center gap-2"
+                  >
+                    <span
+                      className="w-1.5 h-1.5 bg-rose-500 rounded-full"
+                      aria-hidden="true"
+                    ></span>
                     {point}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -6,8 +6,8 @@ import About from "../../Components/Customs/About";
 import Tool from "../../Components/Customs/Tool";
 import MySkills from "../../Components/Customs/MySkills";
 import Projects from "../../Components/Customs/Projects";
-
-import ContactForm, { ContactInfo } from "../../Components/Customs/Contact";
+import Services from "../../Components/Customs/Services";
+import Contact from "../../Components/Customs/Contact";
 
 export default function Home() {
   return (
@@ -21,10 +21,8 @@ export default function Home() {
 
       {/* <Daynamic_Projects /> */}
       <Projects />
-      <div className="flex gap-8 flex-col lg:flex-row container mx-auto">
-        <ContactInfo/>
-      <ContactForm />
-      </div>
+      <Services/>
+      <Contact/>
       
 
     
